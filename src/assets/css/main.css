@@ -1,0 +1,179 @@
+body{
+    background: #efefef
+}
+.pages{
+    height: 100%;
+}
+.view{
+    overflow: auto;
+}
+.row{
+    -webkit-justify-content:flex-start;
+    justify-content:flex-start;
+}
+.content{
+    background: #fff;
+    width:100%;
+}
+a.c-org,.c-org{
+    color:#FE8604
+}
+a.c-gray,.c-gray{
+    color:#ccc
+}
+a.c-red,.c-red{
+    color: #FF5847 
+}
+.page-content{
+    overflow-x:hidden;
+    background: #ebebeb;
+    position: absolute;
+    width:100%;
+    z-index: initial;
+}
+.navbar{
+    position: absolute;
+     backface-visibility:hidden
+}
+.navbar-fixed .page-content, .navbar-through .page-content{
+    padding-top:0;
+    top:44px
+}
+.page>.navbar, .page>.toolbar, .view>.navbar, .view>.toolbar, .views>.navbar, .views>.toolbar{
+    position: fixed;
+}
+.content-block.desc {
+    background: #efefef;
+    margin: 0;
+    padding: 5px 15px;
+ }
+ .v-hide{
+     visibility: hidden
+ }
+.list-block{
+    margin:0;
+    margin-top:0
+}
+.content-block{margin:26px 0}
+.list-block .item-after.active{
+    color: #030303
+}
+.button,a.button{
+    background: #fe8604;
+    border:1px solid #fe8604;
+    color: #fff
+}
+.button.disabled{
+    background:#ccc;
+    border:1px solid #ccc
+}
+.txt-c{
+   text-align: center
+}
+.content-block-title{
+    background: #ebebeb;
+    margin:0;
+    padding:0 15px;
+    height:30px;
+    line-height: 30px
+}
+.label-switch input[type=checkbox]:checked+.checkbox{
+    background: #fe8604
+}
+.title{
+    position:absolute;
+    text-align: center;
+    width:100%;
+    left: 0;
+    font-weight: 600;
+    line-height:44px;
+    z-index: -1
+}
+.searchbar .searchbar-input{
+    -webkit-box-flex:1;
+    box-flex:1;
+}
+.notifications .item-title-row:before{
+    height: 0
+}
+.notifications .item-title-row{
+    margin:0
+}
+.notifications .item-text:first-child{
+    margin:0
+}
+.notifications .toast.notification-item {
+    top:50%;
+    width:auto;
+    height:30px;
+    overflow: hidden;
+    line-height: 30px;
+    position: initial
+}
+
+ .list-block .item-title.label {
+    font-size: 16px;
+    color:#4a4a4a
+}
+input{
+    -webkit-touch-callout: none;
+    -webkit-user-select: text;
+}
+.user-pick{
+    height:240px
+}
+.picker-items{
+    font-size: 22px
+}
+.picker-modal .toolbar+.picker-modal-inner{
+    height:200px
+}
+html.pixel-ratio-2 .picker-center-highlight:after{
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7)
+}
+html.pixel-ratio-2 .list-block .item-inner:after{
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7)
+}
+
+
+@font-face {font-family: "iconfont";
+  src: url('../font/iconfont.ttf?t=1489396269054') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg?t=1489396269054#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-test:before { content: "\e609"; }
+
+.icon-guanbi:before { content: "\e605"; }
+
+.icon-add:before { content: "\e600"; }
+
+.icon-icon1:before { content: "\e604"; }
+
+.icon-yes:before { content: "\e608"; }
+
+.icon-jian:before { content: "\e601"; }
+
+.icon-jia:before { content: "\e602"; }
+
+.icon-error:before { content: "\e603";}
+
+.icon-checkbox:before { content: "\e606"; }
+
+.icon-checked:before { content: "\e607"; }
+
+.icon-youjiantou:before { content: "\e6a1"; }
+
+.icon-kaipiao:before { content: "\e6f1"; }
+
+.icon-lishi:before { content: "\e6f2"; }
+
+.icon-kaipiaojilu:before { content: "\e6f3"; }
