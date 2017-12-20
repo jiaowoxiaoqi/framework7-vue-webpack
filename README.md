@@ -25,3 +25,7 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 注意！
+>本代码来源，并非原创，仅用于学习
+>[源码地址](http://code.taobao.org/p/webpack-vue-framework7/src/)
