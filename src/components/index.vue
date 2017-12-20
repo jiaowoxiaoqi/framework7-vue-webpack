@@ -56,12 +56,12 @@
     </div>
 </template>
 <script>
-var t="很抱歉！";
-var txt="您所在城市尚未开通此业务，可选择其他城市哦~";
-var btn=[{
-        text:'我知道了',
-        close:true
-}];
+    var t="很抱歉！";
+    var txt="您所在城市尚未开通此业务，可选择其他城市哦~";
+    var btn=[{
+            text:'我知道了',
+            close:true
+    }];
 import { mapGetters } from 'vuex'
 export default {
     name:'index',

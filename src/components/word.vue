@@ -7,7 +7,7 @@
         <!--底部按钮，不在显示选项-->
         <div class="foot-view content-block">
                 <label for="ff">
-                    <input id="ff" type="checkbox" value="true"  v-model="isShowWord" >
+                    <input id="ff" type="checkbox">
                     <i class="iconfont icon-checkbox" :class="{'icon-checked':isShowWord}"></i>
                     <span class="c-gray">&nbsp;不在提示</span>
                 </label>

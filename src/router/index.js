@@ -87,8 +87,11 @@ const router= new Router({
   ],
 });
 router.beforeEach((to,from,next)=>{
-  // console.log(to.path)
-  // console.log(from.path)
+  // console.log(to.path,to.name,to,'to')
+  // console.log(from.path,from.path,from)
+  // if(from.path=="/shuijv"&&to.path=="/shuijv/word"){
+  //   next('/')
+  // }
   next()
 })
 export default router;

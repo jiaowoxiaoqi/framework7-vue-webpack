@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import 'framework7';
-import   'babel-polyfill';
+import 'framework7/dist/js/framework7.js';
+// import   'babel-polyfill';
 import   'framework7/dist/css/framework7.ios.min.css';
 import   'framework7/dist/css/framework7.ios.colors.min.css';
 import './assets/css/main.css';
 import Vuex from 'vuex'
 import store from './assets/js/lib/store.js';
-import d from './assets/js/lib/framework7.js';
-import er from 'eruda';
+// import d from './assets/js/lib/framework7.js';
+// import er from 'eruda';
 import axios from 'axios';
 // Vue.config.productionTip = false
 window.f7 = new Framework7({
@@ -34,4 +34,3 @@ new Vue({
   components: { App },
   store
 });
-    

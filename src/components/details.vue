@@ -1,5 +1,5 @@
 <template>
-<div class="content">
+    <div class="content">
         <div class="content-block-title">发票抬头</div>
         <div class="list-block">
             <ul>
@@ -28,86 +28,86 @@
         <!-- 发票明细 -->
         <!--<form >-->
         <transition-group tag="form" name="slide" mode="out-in">
-        <div v-for="(item, index) in list" :key="item">
-            <div class="content-block-title">
-                发票明细{{index+1}}<i class="iconfont icon-jian" v-show="list.length>1" @click="delDetails(index)"></i>
+            <div v-for="(item, index) in list" :key="item">
+                <div class="content-block-title">
+                    发票明细{{index+1}}<i class="iconfont icon-jian" v-show="list.length>1" @click="delDetails(index)"></i>
+                </div>
+                <div class="list-block">
+                    <ul>
+                        <li class="item-link" :class="{'picker-type':index==0}">
+                            <div class="item-content disabled">
+                                <div class="item-inner">
+                                    <div class="item-title label">征收品项目</div>
+                                    <div class="item-input picker-name clear-input" >
+                                        <!--{{}}-->
+                                        <span class="disabled" v-if="pickerDisplay">{{pickerDisplay}}</span>
+                                        <span class="disabled c-gray " v-else>请选择征收品项目</span>
+                                    </div>
+                                    <input type="hidden"  v-model="pickerShuilv" >
+                                    <input type="hidden"  v-model="pickerDisplay" >
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">名称</div>
+                                    <div class="item-input clear-input">
+                                        <input type="text" name="" v-model="item.name" placeholder="请输入商品名称" @focus="showDel('name'+index)" @blur="hideDel">
+                                        <a href="javascript:;" class="iconfont icon-error" v-show="item.name&&clear=='name'+index" @click="item.name=''"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">规格型号</div>
+                                    <div class="item-input clear-input">
+                                        <input type="text" v-model="item.specification" placeholder="请输入规格型号" @focus="showDel('specification'+index)" @blur="hideDel">
+                                        <a href="javascript:;" class="iconfont icon-error" v-show="item.specification&&clear=='specification'+index" @click="item.specification=''"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">计量单位</div>
+                                    <div class="item-input clear-input">
+                                        <input type="text" v-model="item.unit" placeholder="请输入计量单位" @focus="showDel('unit'+index)" @blur="hideDel">
+                                        <a href="javascript:;" class="iconfont icon-error" v-show="item.unit&&clear=='unit'+index" @click="item.unit=''"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">数量</div>
+                                    <div class="item-input clear-input">
+                                        <self-input type="number" v-model.lazy="item.count" placeholder="请输入数量" :param="'count'+index"  @child-focus="showDel" @child-blur="hideDel"></self-input>
+                                        <!--<input type="number" v-model="item.count" placeholder="请输入数量" @focus="showDel('count'+index)" @blur="hideDel"  @input="countValue($event.target.value)">-->
+                                        <a href="javascript:;" class="iconfont icon-error" v-show="item.count&&clear=='count'+index" @click="item.count=''"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">单价</div>
+                                    <div class="item-input clear-input">
+                                        <self-input type="number" v-model.lazy="item.price" placeholder="请输入含税价格" :param="'price'+index"  @child-focus="showDel" @child-blur="hideDel"></self-input>
+                                        <!--<input type="number" v-model="item.price" placeholder="请输入含税价格" @focus="showDel('price'+index)" @blur="hideDel" @input="countValue($event.target.value)" >-->
+                                        <a href="javascript:;" class="iconfont icon-error" v-show="item.price&&clear=='price'+index" @click="item.price=''"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="list-block">
-                <ul>
-                    <li class="item-link" :class="{'picker-type':index==0}">
-                        <div class="item-content disabled">
-                            <div class="item-inner">
-                                <div class="item-title label">征收品项目</div>
-                                <div class="item-input picker-name clear-input" >
-                                    <!--{{}}-->
-                                    <span class="disabled" v-if="pickerDisplay">{{pickerDisplay}}</span>
-                                    <span class="disabled c-gray " v-else>请选择征收品项目</span>
-                                </div>
-                                <input type="hidden" :value="pickerShuilv" v-model="pickerShuilv">
-                                <input type="hidden" :value="pickerDisplay" v-model="pickerDisplay">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">名称</div>
-                                <div class="item-input clear-input">
-                                    <input type="text" name="" v-model="item.name" placeholder="请输入商品名称" @focus="showDel('name'+index)" @blur="hideDel">
-                                    <a href="javascript:;" class="iconfont icon-error" v-show="item.name&&clear=='name'+index" @click="item.name=''"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">规格型号</div>
-                                <div class="item-input clear-input">
-                                    <input type="text" v-model="item.specification" placeholder="请输入规格型号" @focus="showDel('specification'+index)" @blur="hideDel">
-                                    <a href="javascript:;" class="iconfont icon-error" v-show="item.specification&&clear=='specification'+index" @click="item.specification=''"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">计量单位</div>
-                                <div class="item-input clear-input">
-                                    <input type="text" v-model="item.unit" placeholder="请输入计量单位" @focus="showDel('unit'+index)" @blur="hideDel">
-                                    <a href="javascript:;" class="iconfont icon-error" v-show="item.unit&&clear=='unit'+index" @click="item.unit=''"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">数量</div>
-                                <div class="item-input clear-input">
-                                    <self-input type="number" v-model.lazy="item.count" placeholder="请输入数量" :param="'count'+index"  @child-focus="showDel" @child-blur="hideDel"></self-input>
-                                    <!--<input type="number" v-model="item.count" placeholder="请输入数量" @focus="showDel('count'+index)" @blur="hideDel"  @input="countValue($event.target.value)">-->
-                                    <a href="javascript:;" class="iconfont icon-error" v-show="item.count&&clear=='count'+index" @click="item.count=''"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">单价</div>
-                                <div class="item-input clear-input">
-                                    <self-input type="number" v-model.lazy="item.price" placeholder="请输入含税价格" :param="'price'+index"  @child-focus="showDel" @child-blur="hideDel"></self-input>
-                                    <!--<input type="number" v-model="item.price" placeholder="请输入含税价格" @focus="showDel('price'+index)" @blur="hideDel" @input="countValue($event.target.value)" >-->
-                                    <a href="javascript:;" class="iconfont icon-error" v-show="item.price&&clear=='price'+index" @click="item.price=''"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
         </transition-group>
         <!--</form>-->
         <!-- 发票明细 -->
@@ -138,7 +138,7 @@
                 <span> 我已阅读</span><router-link :to="{name:'word',param:{type:0}}">《开票须知》</router-link>
         </div>
         <div class="mui-backdrop" v-show="backdrop"></div>
-</div>
+    </div>
 </template>
 <script>
 import utils from '../assets/js/util';
